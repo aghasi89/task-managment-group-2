@@ -1,14 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Start from "./pages/Start";
-import Login from "./pages/login";
-import Home from './pages/home';
-import CreateProject from "./pages/createProject";
-import Invite from './pages/invite';
-import TaskCategory from './pages/taskCategory';
-import NewTask from './pages/newTask';
-import CommentLine from './pages/commentLine';
+import Start from "./Pages/Start";
+import Login from "./Pages/Login";
+import Home from './Pages/Home';
+import Createproject from "./Pages/Createproject";
+import Invite from './Pages/Invite';
+import TaskCategory from './Pages/Taskcategory';
+import Newtask from './Pages/Main/Newtask';
+import Commentline from './Pages/Commentline';
 
 function App() {
   return (
@@ -20,10 +19,11 @@ function App() {
           <Route path='start' element={<Start/>}/>
           <Route path='login' element={<Login/>}/>
           <Route path='home' element={<Home/>}/>
-          <Route path='createproject' element={<CreateProject/>}/>
+          <Route path='invite' element={<Invite/>}/>
+          <Route path='createproject' element={<Createproject/>}/>
           <Route path='taskcategory' element={<TaskCategory/>}/>
-          <Route path='newtask' element={<NewTask/>}/>
-          <Route path='commentline' element={<CommentLine/>}/>
+          <Route path='newtask' element={<Newtask/>}/>
+          <Route path='commentline' element={<Commentline/>}/>
       </Route>
 
       </header>
