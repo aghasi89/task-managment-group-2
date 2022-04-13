@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Start from "./Pages/Start";
 import Login from "./Pages/Login";
-import Home from './Pages/Home';
+import Home from './Pages/Main/Home';
 import Createproject from "./Pages/Createproject";
 import Invite from './Pages/Invite';
 import TaskCategory from './Pages/Taskcategory';
