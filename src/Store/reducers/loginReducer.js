@@ -1,16 +1,14 @@
-// import { Action } from "history"
-// import reducers from "."
-// import {GET_ERRORS} from "../types/index"
+// import { types } from "../types";
 
 // const INIT_STATE = {
-//         message:{},
-//         status:"",
-//         Id:""
+//         message:null,
+//         status:null,
+//         Id:null
 // }
 // export default function (state=INIT_STATE, action){
-//     //const {action, payload, id}=payload
-//     switch (action.type) {
-//         case GET_ERRORS:
+//     const { type, payload } = action;
+//     switch (type) {
+//         case types.REGISTRATION_FAIL:
 //             return {
 //                 message: action.payload.message,
 //                 status:action.payload.status,
