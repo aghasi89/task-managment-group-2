@@ -1,33 +1,32 @@
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import Start from "./pages/Start";
-import Login from "./pages/login";
-import Home from './pages/Main/Home';
-import Createproject from "./pages/Main/Createproject";
-import Invite from './pages/Main/Invite';
-import TaskCategory from './pages/Main/TaskCategory';
-import Newtask from './pages/Main/Newtask';
-import Commentline from './pages/Main/Commentline';
+// import React from 'react';
+// import { Router, Route, Switch, Redirect } from 'react-router-dom';
+// import { connect } from 'react-redux';
+// // import Start from "./Components/Start";
+// import { Login } from './Pages/Login';
 
-function App() {
+// export default function App() {
+//     return (
+//       <div className="App">  
+//         <Login />
+//       </div>
+//     );
+//   }
   
+import { Login } from "./Pages/Login";
+import { Dashboard } from "./Pages/Dashboard";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import ProtectedRoute from "./Routes";
+import { useSelector } from "react-redux";
+import  Start  from "./Pages/Start";
+export default function App() {
+  const auth = useSelector((state) => state.isAuthenticated);
   return (
-    <div className="App">
-      <Routes>
-        <Route>
-            <Route path='start' element={<Start/>}/>
-            <Route path='login' element={<Login/>}/>
-            <Route path='home' element={<Home/>}/>
-            <Route path='/' element={<Home/>}/>
-            <Route path='invite' element={<Invite/>}/>
-            <Route path='createproject' element={<Createproject/>}/>
-            <Route path='taskcategory' element={<TaskCategory/>}/>
-            <Route path='newtask' element={<Newtask/>}/>
-            <Route path='commentline' element={<Commentline/>}/>
-        </Route>
-      </Routes>
-    </div>
+    <Router>
+      <Switch>
+      <Route exact path="/start" component={Start} />
+        <ProtectedRoute auth={auth} exact path="/" component={Dashboard} />
+        <Route exact path="/login" component={Login} />
+      </Switch>
+    </Router>
   );
 }
-
-export default App;
