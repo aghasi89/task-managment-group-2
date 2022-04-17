@@ -1,13 +1,14 @@
 import './App.css';
+//import Header from './Component/HomePage/Header';
 import { Route, Routes } from 'react-router-dom';
-import Start from "./pages/Start";
-import Login from "./pages/login";
-import Home from './pages/Main/Home';
-import Createproject from "./pages/Main/Createproject";
-import Invite from './pages/Main/Invite';
-import TaskCategory from './pages/Main/TaskCategory';
-import Newtask from './pages/Main/Newtask';
-import Commentline from './pages/Main/Commentline';
+import Start from "./Pages/Start"
+import Login from "./Pages/Login";
+import Home from './Pages/Main/Home/home';
+import Createproject from "./Pages/Main/Createproject";
+import Invite from './Pages/Main/Invite';
+import TaskCategory from './Pages/Main/TaskCategory';
+import Newtask from './Pages/Main/Newtask';
+import Commentline from './Pages/Main/Commentline';
 
 function App() {
   
@@ -26,6 +27,8 @@ function App() {
             <Route path='commentline' element={<Commentline/>}/>
         </Route>
       </Routes>
+      
+      <h1>REACT</h1>
     </div>
   );
 }

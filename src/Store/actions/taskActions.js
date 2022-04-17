@@ -1,15 +1,16 @@
-import { taskTypes } from "../types/taskTypes";
-
+//import { taskTypes } from "../types/taskTypes";
+export const ADD_TASK= 'ADD_TASK';
+export const DELETE_TASK= 'DELETE_TASK';
 
 export function addTask(task) {
     return {
-      type: taskTypes.ADD_TASK,
+      type: ADD_TASK,
       task
     }
   }
   export function deleteTask(id) {
     return {
-      type: taskTypes.DELETE_TASK,
+      type: DELETE_TASK,
       id
     }
   }
