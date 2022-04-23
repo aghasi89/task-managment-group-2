@@ -48,3 +48,14 @@
     width:100%;
     transition:800ms ease all;
   }
+  .btn_block_task {
+    width: 260%;
+    display: flex;
+    justify-content: space-around
+  }
+  .task_input {
+    padding: 10px;
+  }
+  .gray_button {
+    
+  }

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { addProject } from '../../store/actions/projectsActions';
 import { useDispatch, useSelector } from "react-redux";
 import { v1 as uuid } from 'uuid';
-import { useNavigate,useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { addTask } from "../../store/actions/taskActions";
 
 
@@ -11,13 +11,13 @@ export default () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [task, setTask] = useState("")
-    const {id} = useParams()
+    const { id } = useParams()
 
 
     const handlerAddTask = (e) => {
         e.preventDefault()
         dispatch(addTask({
-            projectID:id,
+            projectID: id,
             id: uuid(),
             text: task,
         }))
@@ -39,14 +39,12 @@ export default () => {
                     value={task}
                     onChange={onChangeTask}
 
-                >
-
-                </input>
+                />
                 <button
                     className="gray_button"
                     onClick={handlerAddTask}
 
-                >new task</button>
+                > Add new task</button>
             </div>
             <div>
                 <img src={gif1} alt="gif" className="task_gif" />

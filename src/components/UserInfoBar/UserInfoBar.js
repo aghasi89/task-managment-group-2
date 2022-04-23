@@ -31,7 +31,7 @@ export default () =>{
     </div>
     </Link>
     < Link to={"LogOut"} style={{textDecoration: "none"}}>
-    <div>
+    <div >
       <span>Log out </span>
     </div>
     </Link>

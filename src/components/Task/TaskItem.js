@@ -11,9 +11,15 @@ export default () => {
     const createTask = ()=> {
         navigate(`/CreateTask/${id}`)
     }
+    const redirectToProject = ()=> {
+        navigate(`/`)
+    }
     return (
         <div >
-            <button onClick={createTask} className='task_button' >New task</button>
+            <div className='btn_block_task'>
+                <button onClick={createTask} className='task_button' >New task</button>
+                <button onClick={redirectToProject} className='task_button' >All Projects</button>
+            </div>
             <div >
                 {
                     newTask?.map(task=>(
