@@ -6,8 +6,7 @@ import login from './loginReducer';
 const reducer = combineReducers({
   project:ProjectReducer,
   task:TaskReducer,
-  user:login
-    
+  user:login,
   });
   
   export default reducer;
