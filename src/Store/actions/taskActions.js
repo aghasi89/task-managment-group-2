@@ -1,16 +1,9 @@
-import { taskTypes } from "../types/taskTypes";
+export const ADD_TASK = 'ADD_TASK';
 
 
 export function addTask(task) {
-    return {
-      type: taskTypes.ADD_TASK,
-      task
-    }
+  return {
+    type: ADD_TASK,
+    payload : task
   }
-  export function deleteTask(id) {
-    return {
-      type: taskTypes.DELETE_TASK,
-      id
-    }
-  }
-  
+}

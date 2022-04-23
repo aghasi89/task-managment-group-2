@@ -1,27 +1,25 @@
-import { act } from "react-dom/test-utils";
+import { ADD_TASK } from "../actions/taskActions";
 
-const initialState={
-    todos: [],
-    id:0
+let data;
+try {
+  data = JSON.parse(localStorage.getItem('list2')) || []
+} catch (e) {
+  data = []
 }
-const reducer = (state = initialState, action) => {
-        switch (action.type) {
-            case "ADD_TASK":
-        let newState={...state};
-        newState.id++;
-            return {
-                ...newState,
-                todos: [...newState.todos,
-                    {
-                    task:action.task,
-                    id:newState.id
-                }]
-             
-            };
-            case "DELETE_TASK":
+const INIT_STATE = data
 
-            
-            default:
-                return state
-        }
-}
+
+export default function TaskReducer(state = INIT_STATE, action) {
+  switch (action.type) {
+        case ADD_TASK:
+          const list2 = [...state, action.payload];
+          localStorage.setItem('list2', JSON.stringify(list2));
+           return list2
+           
+      
+      default: {
+        return state
+      }
+    }
+  }
+  

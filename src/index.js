@@ -1,18 +1,23 @@
-
-import { StrictMode } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import ReactDOM from "react-dom";
+import React from 'react';
+import { createBootstrapComponent } from 'react-bootstrap/esm/ThemeProvider';
+import ReactDOM from 'react-dom';
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import AuthReducer from "./Store/Reducers";
-import App from "./App";
-const rootElement = document.getElementById("root");
-const store = createStore(AuthReducer);
+import App from './App';
+import "./index.css"
+import reducer from './store/reducers';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const store = createStore(reducer)
+
 ReactDOM.render(
-  <StrictMode>
-    <Provider store={store}>
+  <React.StrictMode>
+ <Provider store={store}>
       <App />
     </Provider>
-  </StrictMode>,
-  rootElement
+    </React.StrictMode>,
+  document.getElementById('root')
 );
+
+
+
